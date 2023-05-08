@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useRef } from 'react';
 import './App.css';
+import About from './components/About/About';
+import Bio from './components/Bio/Bio';
+import Header from './components/Header/Header';
+import Projects from './components/Projects/Projects';
 
 function App() {
+
+  const homeRef = useRef(null)
+  const projectsRef = useRef(null)
+  const contactRef = useRef(null)
+
+  const onClick = (e) => {
+    console.log(e.target.id)
+    if (e.target.id === "home")
+      homeRef.current.scrollIntoView({ behavior: 'smooth' })
+    if (e.target.id === "projects")
+      projectsRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='overflow-x-clip'>
+      <Header onClick={onClick} />
+      <Bio refs={homeRef} onClick={onClick} />
+      <About />
+      <Projects refs={projectsRef} />
     </div>
   );
 }
