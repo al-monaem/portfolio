@@ -39,7 +39,7 @@ const Bio = ({ refs, onClick }) => {
             </section>
             <section className={style.image}>
                 <div className={style.img_container}>
-                    <img className={style.img} src={picture} />
+                    <img className={style.img} src={picture} alt="" />
                 </div>
             </section>
             <div className="waves">

@@ -15,7 +15,7 @@ const About = () => {
                 </div>
                 <div className="md:w-[40%] flex items-center justify-center relative">
                     <div className="h-52 w-52 absolute">
-                        <img className="" src={graph} />
+                        <img className="" src={graph} alt="" />
                     </div>
                     <div className="flex flex-col items-center font-bold">
                         <p className="z-0 text-7xl text-white">01</p>

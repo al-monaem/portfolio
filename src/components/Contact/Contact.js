@@ -91,7 +91,7 @@ const Contact = ({ refs }) => {
                             <a target="_blank" className={style.link} href="https://twitter.com/__AbyssWalker"><BsTwitter className="w-6 h-6" /></a>
                         </div>
                         <div className="absolute bottom-0 right-0">
-                            <img src={splash} className="w-36 h-36 md:w-44 md:h-44" />
+                            <img src={splash} alt="" className="w-36 h-36 md:w-44 md:h-44" />
                         </div>
                     </div>
                     <div className="md:w-[70%] p-10">

@@ -6,7 +6,7 @@ const Project = ({ title, description, image, images, align, skills, onClick, is
             acc.push(
                 <div key={index} className="flex items-center justify-center space-x-2 mb-2">
                     {chunk.map((item, itemIndex) => (
-                        <span onClick={(e) => onClick(e)} className="border-2 border-[#6db2c7fd] rounded-md hover:cursor-pointer hover:scale-[180%] transition duration-500 shadow-md hover:shadow-md" key={itemIndex}><img className="rounded-md" src={item} /></span>
+                        <span onClick={(e) => onClick(e)} className="border-2 border-[#6db2c7fd] rounded-md hover:cursor-pointer hover:scale-[180%] transition duration-500 shadow-md hover:shadow-md" key={itemIndex}><img className="rounded-md" src={item} alt="" /></span>
                     ))}
                 </div>
             );
@@ -24,7 +24,7 @@ const Project = ({ title, description, image, images, align, skills, onClick, is
                         <h1 className="text-center text-3xl">{title}</h1>
                         <br />
                         <div>
-                            <img className="w-52 h-52 mr-10" src={image} align={align} />
+                            <img className="w-52 h-52 mr-10" src={image} align={align} alt="" />
                             <p className="text-lg">{description}</p>
                         </div>
                         <div className="w-full md:w-[70%] overflow-auto text-sm flex space-x-2 font-semibold pb-10 pt-10">
@@ -53,7 +53,7 @@ const Project = ({ title, description, image, images, align, skills, onClick, is
                         <h1 className="text-center text-3xl">{title}</h1>
                         <br />
                         <div>
-                            <img className="w-52 h-52 mr-10" src={image} align={align} />
+                            <img className="w-52 h-52 mr-10" src={image} align={align} alt="" />
                             <p className="text-lg">{description}</p>
                         </div>
                         <div className="w-full md:w-[60%] flex ml-auto text-sm space-x-2 font-semibold pb-10">

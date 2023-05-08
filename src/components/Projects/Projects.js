@@ -21,7 +21,6 @@ import hms_tracks from "../../assets/hms/tracks.png"
 import hms_users from "../../assets/hms/users.png"
 import hms_register from "../../assets/hms/register.png"
 
-import dummy from "../../assets/dummy.png"
 import { useEffect, useState } from "react"
 import ReactModal from "react-modal"
 
