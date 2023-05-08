@@ -16,7 +16,7 @@ const Bio = ({ refs, onClick }) => {
                             className="rounded-full mr-3 md:mr-5"
                             animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
                             transition={{ duration: 1.5, repeat: Infinity }}
-                        ><a href="https://github.com/al-monaem" target="_blank" className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"><BsGithub /></a>
+                        ><a href="https://github.com/al-monaem" target="_blank" rel="noopener noreferrer" className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"><BsGithub /></a>
                         </motion.div>
                         Full-Stack Developer</p>
 

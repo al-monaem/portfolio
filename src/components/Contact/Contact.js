@@ -86,9 +86,9 @@ const Contact = ({ refs }) => {
                             </div>
                         </div>
                         <div className="flex mt-auto space-x-3 md:mb-10 pt-10 md:p-5">
-                            <a target="_blank" className={style.link} href="https://www.facebook.com/biish0p"><BsFacebook className="w-6 h-6" /></a>
-                            <a target="_blank" className={style.link} href="https://www.linkedin.com/in/al-monaem-khan-4713b01ab/"><BsLinkedin className="w-6 h-6" /></a>
-                            <a target="_blank" className={style.link} href="https://twitter.com/__AbyssWalker"><BsTwitter className="w-6 h-6" /></a>
+                            <a target="_blank" rel="noopener noreferrer" className={style.link} href="https://www.facebook.com/biish0p"><BsFacebook className="w-6 h-6" /></a>
+                            <a target="_blank" rel="noopener noreferrer" className={style.link} href="https://www.linkedin.com/in/al-monaem-khan-4713b01ab/"><BsLinkedin className="w-6 h-6" /></a>
+                            <a target="_blank" rel="noopener noreferrer" className={style.link} href="https://twitter.com/__AbyssWalker"><BsTwitter className="w-6 h-6" /></a>
                         </div>
                         <div className="absolute bottom-0 right-0">
                             <img src={splash} alt="" className="w-36 h-36 md:w-44 md:h-44" />

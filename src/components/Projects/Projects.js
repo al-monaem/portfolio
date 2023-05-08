@@ -91,7 +91,7 @@ const Projects = ({ refs }) => {
                 preventScroll={true}
             >
                 <div className="flex items-center justify-center" >
-                    <img className="rounded-2xl" src={modalImage} />
+                    <img className="rounded-2xl" src={modalImage} alt="" />
                 </div>
             </ReactModal>
         </div>
