@@ -1,11 +1,16 @@
 import style from "./style"
 import { AiOutlineMenuFold } from "react-icons/ai"
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 
 const Header = ({ onClick }) => {
 
     const [openMenu, setOpenMenu] = useState(false)
+
+    const onTap = (e) => {
+        setOpenMenu(!openMenu)
+        e.target.blur()
+    }
 
     return (
         <div className={style.navbar}>
@@ -29,40 +34,64 @@ const Header = ({ onClick }) => {
                     transition={{ duration: 0.5 }}
                 >
                     <motion.div
-                        onClick={() => setOpenMenu(!openMenu)}
-                        initial={{ rotateY: 0 }}
-                        animate={openMenu ? { rotateY: 180 } : { rotateY: 0 }}
+                        className={`${openMenu ? "bg-white text-black" : "bg-[#6db2c7fd]"} border`}
+                        onClick={(e) => onTap(e)}
+                        initial={{ rotateY: 0, borderRadius: "50px 50px 50px 50px" }}
+                        animate={openMenu ? { rotateY: 180, borderRadius: "50px 50px 0px 0px" } : { rotateY: 0, borderRadius: "50px 50px 50px 50px" }}
                         transition={{ duration: 0.5 }}
                     >
-                        <AiOutlineMenuFold className={style.icon} />
+                        <AiOutlineMenuFold className={`${style.icon}`} />
                     </motion.div>
-                    {openMenu &&
-                        <div className="absolute">
+                    <AnimatePresence>
+                        {openMenu &&
                             <motion.div
-                                className={style.link}
+                                className="absolute bg-white text-black rounded-b-lg rounded-tr-lg w-[100px]"
                                 initial={{ x: 100 }}
                                 animate={{ x: 0 }}
-                                transition={{ delay: 0.2 }}
+                                transition={{ duration: 1 }}
+                                exit={{ x: 100 }}
                             >
-                                Home
-                            </motion.div>
-                            <motion.div
-                                className={style.link}
-                                initial={{ x: 100 }}
-                                animate={{ x: 0 }}
-                                transition={{ delay: 0.4 }}
-                            >
-                                Projects
-                            </motion.div>
-                            <motion.div
-                                className={style.link}
-                                initial={{ x: 100 }}
-                                animate={{ x: 0 }}
-                                transition={{ delay: 0.6 }}
-                            >
-                                Contact
-                            </motion.div>
-                        </div>}
+                                <motion.div
+                                    id="home"
+                                    className={`${style.link} border-b-2 border-[#6db2c7fd] hover:text-white`}
+                                    initial={{ x: 100 }}
+                                    animate={{ x: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                    onClick={(e) => {
+                                        onClick(e)
+                                        setOpenMenu(false)
+                                    }}
+                                >
+                                    Home
+                                </motion.div>
+                                <motion.div
+                                    id="projects"
+                                    className={`${style.link} border-b-2 border-[#6db2c7fd] hover:text-white`}
+                                    initial={{ x: 100 }}
+                                    animate={{ x: 0 }}
+                                    transition={{ delay: 0.4 }}
+                                    onClick={(e) => {
+                                        onClick(e)
+                                        setOpenMenu(false)
+                                    }}
+                                >
+                                    Projects
+                                </motion.div>
+                                <motion.div
+                                    id="contact"
+                                    className={`${style.link} border-b-2 border-[#6db2c7fd] hover:text-white`}
+                                    initial={{ x: 100 }}
+                                    animate={{ x: 0 }}
+                                    transition={{ delay: 0.6 }}
+                                    onClick={(e) => {
+                                        onClick(e)
+                                        setOpenMenu(false)
+                                    }}
+                                >
+                                    Contact
+                                </motion.div>
+                            </motion.div>}
+                    </AnimatePresence>
                 </motion.div>
             </div>
         </div>

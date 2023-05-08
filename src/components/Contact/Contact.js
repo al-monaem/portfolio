@@ -68,8 +68,8 @@ const Contact = ({ refs }) => {
                     <h4>Any questions? Just email me!</h4>
                 </div>
 
-                <div className="flex w-[80%] shadow-lg rounded-md bg-white">
-                    <div className="text-white relative w-[30%] rounded-md shadow-lg bg-[#6db2c7fd] p-5 flex flex-col">
+                <div className="flex md:flex-row flex-col w-[80%] shadow-lg rounded-md bg-white">
+                    <div className="text-white relative md:w-[30%] rounded-md shadow-lg bg-[#6db2c7fd] p-5 flex flex-col">
                         <div>
                             <h1 className="text-xl py-3">Contact Information</h1>
                             <div className="flex items-center space-x-3 mb-2">
@@ -85,18 +85,18 @@ const Contact = ({ refs }) => {
                                 <span>533/4, North Ibrahimpur<br />Kafrul, Mirpur-14</span>
                             </div>
                         </div>
-                        <div className="flex mt-auto space-x-3 mb-10 p-5">
+                        <div className="flex mt-auto space-x-3 md:mb-10 pt-10 md:p-5">
                             <a target="_blank" className={style.link} href="https://www.facebook.com/biish0p"><BsFacebook className="w-6 h-6" /></a>
                             <a target="_blank" className={style.link} href="https://www.linkedin.com/in/al-monaem-khan-4713b01ab/"><BsLinkedin className="w-6 h-6" /></a>
                             <a target="_blank" className={style.link} href="https://twitter.com/__AbyssWalker"><BsTwitter className="w-6 h-6" /></a>
                         </div>
                         <div className="absolute bottom-0 right-0">
-                            <img src={splash} className="w-44 h-44" />
+                            <img src={splash} className="w-36 h-36 md:w-44 md:h-44" />
                         </div>
                     </div>
-                    <div className="w-[70%] p-10">
+                    <div className="md:w-[70%] p-10">
                         <form ref={form} className="flex flex-col" onSubmit={(e) => onClick(e)}>
-                            <div className="text-xl text-center flex items-center justify-center space-x-3"><span><MdEmail /></span><span>Send an Email</span></div>
+                            <div className="mb-5 text-xl text-center flex items-center justify-center space-x-3"><span><MdEmail /></span><span>Send an Email</span></div>
                             <div className="flex space-y-2 flex-col">
                                 <div className={style.inputBlock}>
                                     <label className="text-lg">Email</label>

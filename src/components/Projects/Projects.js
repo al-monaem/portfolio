@@ -1,5 +1,6 @@
 import Project from "./Project"
 import style from "./style"
+import "./style.css"
 
 import metro from "../../assets/metro/metro.png"
 import metro_login from "../../assets/metro/login.png"
@@ -26,7 +27,7 @@ import ReactModal from "react-modal"
 
 const metroDescription = "The metro system was built so that the daily users could get the exact information of what they need. One of the main feature of the system is live tracking of the train. There is also a ticket system integrated with mobile banking. A new QR ticket verification process is also added to the system to prevent fraud. Users can purchase ticket and store that ticket for as long as they want. They can refund any valid ticket at any time. Also a exclusive wallet system is introduced, by which users can purchase tickets using in-app currencies."
 const metroImages = [metro_login, metro_admin, metro_active, metro_dashboard, metro_recharge, metro_users]
-const metroSkills = ["ReactJS", "NodeJS", "Laravel", "Asp .NET", "Tailwind"]
+const metroSkills = ["ReactJS", "NodeJS", "Laravel", "Asp.NET", "Tailwind"]
 
 const artconDescription = "This simple profile page was designed for artists where the user can showcase their artwork. They can link their personal websites in this page. Also other relevent artists list is also shown in this page."
 const artconImages = [artcon, artcon_arts, artcon_others]
@@ -40,6 +41,22 @@ const Projects = ({ refs }) => {
 
     const [openModal, setOpenModal] = useState(false)
     const [modalImage, setModalImage] = useState(null)
+
+    const [isMobile, setIsMobile] = useState(false)
+
+    //choose the screen size 
+    const handleResize = () => {
+        if (window.innerWidth < 720) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+    }
+
+    // create an event listener
+    useEffect(() => {
+        window.addEventListener("resize", handleResize)
+    })
 
     const onClick = (e) => {
         console.log(e.target.getAttribute('src'))
@@ -65,7 +82,7 @@ const Projects = ({ refs }) => {
         <div id="projects" ref={refs} className={style.main}>
             <h1 className={style.header}>My Projects</h1>
             <Project onClick={onClick} title={"Metro e-Service"} skills={metroSkills} image={metro} images={metroImages} align={"left"} description={metroDescription} />
-            <Project onClick={onClick} title={"Profile Page"} skills={artconSkills} image={artcon} images={artconImages} align={"right"} description={artconDescription} />
+            <Project isMobile={isMobile} onClick={onClick} title={"Profile Page"} skills={artconSkills} image={artcon} images={artconImages} align={"right"} description={artconDescription} />
             <Project onClick={onClick} title={"Hospital Management System"} skills={hmsSkills} image={hms} images={hmsImages} align={"left"} description={hmsDescription} />
 
             <ReactModal
