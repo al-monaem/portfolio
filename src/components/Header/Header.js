@@ -19,7 +19,7 @@ const Header = ({ onClick }) => {
                 <div id="projects" className={style.link} onClick={(e) => onClick(e)}>
                     Projects
                 </div>
-                <div className={style.link} onClick={(e) => onClick(e)}>
+                <div id="contact" className={style.link} onClick={(e) => onClick(e)}>
                     Contact
                 </div>
             </div>

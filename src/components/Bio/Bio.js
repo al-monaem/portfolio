@@ -1,6 +1,7 @@
 import style from "./style"
 import picture from "../../assets/me.jpg"
 import { BiDownArrowCircle } from "react-icons/bi"
+import { BsGithub } from "react-icons/bs"
 import { motion } from "framer-motion"
 
 const Bio = ({ refs, onClick }) => {
@@ -10,13 +11,20 @@ const Bio = ({ refs, onClick }) => {
                 <div className={style.content}>
                     <p className={style.name}>Hi, I'm <br />Al-Monaem Khan</p>
                     <br />
-                    <p className="gruppo text-5xl italic font-semibold">Full-Stack Developer</p>
+                    <p className="gruppo text-5xl italic font-semibold flex">
+                        <motion.div
+                            className="rounded-full mr-2"
+                            animate={{ y: [0, 3, 6, 3, 0, -3, -6, -3, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                        ><a href="https://github.com/al-monaem" target="_blank" className="shadow-md shadow-[#97a1db] hover:text-white transition rounded-full hover:cursor-pointer"><BsGithub /></a>
+                        </motion.div>
+                        Full-Stack Developer</p>
 
                     <div className="flex mt-10 space-x-3">
                         <button id="projects" onClick={(e) => onClick(e)} className="z-50 hover:shadow-lg transition transition-500 bg-[#97a1db] py-2 px-3 font-semibold gruppo text-white rounded-md">
                             View My Works
                         </button>
-                        <div className="z-50 gruppo font-bold hover:bg-black hover:text-white px-2 transition rounded-md duration-300 flex items-center hover:cursor-pointer cursor-none">
+                        <div id="contact" onClick={(e) => onClick(e)} className="z-50 gruppo font-bold hover:bg-black hover:text-white px-2 transition rounded-md duration-300 flex items-center hover:cursor-pointer cursor-none">
                             Contact Me
                             <motion.div
                                 animate={{ y: [0, 1, 2, 1, 0, -1, -2, -1, 0] }}

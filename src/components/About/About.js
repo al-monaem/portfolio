@@ -18,8 +18,8 @@ const About = () => {
                         <img className="" src={graph} />
                     </div>
                     <div className="flex flex-col items-center font-bold">
-                        <p className="z-10 text-7xl text-white">01</p>
-                        <p className="z-10 text-3xl text-neutral-500">Years of Experience</p>
+                        <p className="z-0 text-7xl text-white">01</p>
+                        <p className="z-0 text-3xl text-neutral-500">Years of Experience</p>
                     </div>
                 </div>
             </div>
