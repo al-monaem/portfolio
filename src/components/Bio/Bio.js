@@ -1,5 +1,5 @@
 import style from "./style"
-import picture from "../../assets/me.jpg"
+import picture from "../../assets/me.png"
 import { BiDownArrowCircle } from "react-icons/bi"
 import { BsGithub } from "react-icons/bs"
 import { motion } from "framer-motion"
