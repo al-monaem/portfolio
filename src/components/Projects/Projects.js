@@ -21,6 +21,10 @@ import hms_tracks from "../../assets/hms/tracks.png"
 import hms_users from "../../assets/hms/users.png"
 import hms_register from "../../assets/hms/register.png"
 
+import exam from "../../assets/exam/exam.png"
+import exam_create from "../../assets/exam/create.png"
+import exam_schedule from "../../assets/exam/schedule.png"
+
 import { useEffect, useState } from "react"
 import ReactModal from "react-modal"
 
@@ -35,6 +39,10 @@ const artconSkills = ["NextJS", "Tailwind"]
 const hmsDescription = "This was my first web-app project. This is a simple hospital management system which manages users, patients, doctors and nurses. The motive behind this project was to completely digitalize the current management systems in the hospitals."
 const hmsImages = [hms_login, hms_register, hms_edit, hms_tracks, hms_users]
 const hmsSkills = ["Php", "JQuery", "HTML", "CSS3"]
+
+const examDescription = "This is my latest work. I'm still working on this project. The system will allow teachers to schedule an exam for their students. They can manage sections, and assigne exams to sections. For registered students, their will be exclusive material as well as scheduled exam, but for an unregistered student, there will be practice materials."
+const examImages = [exam_create, exam_schedule]
+const examSkills = ["MERN", "SocketI/O", "Tailwind", "Redux", "JWT"]
 
 const Projects = ({ refs }) => {
 
@@ -80,9 +88,10 @@ const Projects = ({ refs }) => {
     return (
         <div id="projects" ref={refs} className={style.main}>
             <h1 className={style.header}>My Projects</h1>
-            <Project onClick={onClick} title={"Metro e-Service"} skills={metroSkills} image={metro} images={metroImages} align={"left"} description={metroDescription} />
-            <Project isMobile={isMobile} onClick={onClick} title={"Profile Page"} skills={artconSkills} image={artcon} images={artconImages} align={"right"} description={artconDescription} />
-            <Project onClick={onClick} title={"Hospital Management System"} skills={hmsSkills} image={hms} images={hmsImages} align={"left"} description={hmsDescription} />
+            <Project onClick={onClick} title={"Exam Platform"} skills={examSkills} image={exam} images={examImages} align={"left"} description={examDescription} />
+            <Project isMobile={isMobile} onClick={onClick} title={"Metro e-Service"} skills={metroSkills} image={metro} images={metroImages} align={"right"} description={metroDescription} />
+            <Project onClick={onClick} title={"Profile Page"} skills={artconSkills} image={artcon} images={artconImages} align={"left"} description={artconDescription} />
+            <Project isMobile={isMobile} onClick={onClick} title={"Hospital Management System"} skills={hmsSkills} image={hms} images={hmsImages} align={"right"} description={hmsDescription} />
 
             <ReactModal
                 isOpen={openModal}
