@@ -56,7 +56,7 @@ const Project = ({ title, description, image, images, align, skills, onClick, is
                             <img className="w-52 h-52 mr-10" src={image} align={align} alt="" />
                             <p className="text-lg">{description}</p>
                         </div>
-                        <div className="w-full md:w-[60%] flex ml-auto text-sm space-x-2 font-semibold pb-10">
+                        <div className="w-full md:w-[60%] flex text-sm space-x-2 font-semibold mt-2 pb-10">
                             {skills && skills.map((skill, index) => {
                                 return <div key={index} className={`px-3 py-2 text-white rounded-md inline-block ${colors[(Math.random() * colors.length) | 0]}`}>{skill}</div>
                             })}

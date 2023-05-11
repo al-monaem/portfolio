@@ -40,7 +40,7 @@ const hmsDescription = "This was my first web-app project. This is a simple hosp
 const hmsImages = [hms_login, hms_register, hms_edit, hms_tracks, hms_users]
 const hmsSkills = ["Php", "JQuery", "HTML", "CSS3"]
 
-const examDescription = "This is my latest work. I'm still working on this project. The system will allow teachers to schedule an exam for their students. They can manage sections, and assigne exams to sections. For registered students, their will be exclusive material as well as scheduled exam, but for an unregistered student, there will be practice materials."
+const examDescription = "This is my latest work. I'm still working on this project. The system will allow teachers to schedule an exam for their students. They can manage sections, and assign exams to sections. For registered students, their will be exclusive material as well as scheduled exam, but for an unregistered student, there will be practice materials."
 const examImages = [exam_create, exam_schedule]
 const examSkills = ["MERN", "SocketI/O", "Tailwind", "Redux", "JWT"]
 
