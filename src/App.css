@@ -1,22 +1,23 @@
 * {
-    scroll-margin-top: 60px;
+  scroll-margin-top: 60px;
 }
 
 *::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
+  height: 3px;
 }
 
 *::-webkit-scrollbar-track {
-    width: 10px;
-    background-color: #f6f5f8;
-    border-radius: 2em;
+  width: 10px;
+  background-color: #f6f5f8;
+  border-radius: 2em;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #6db2c7fd;
-    box-shadow: inset;
+  background-color: #6db2c7fd;
+  box-shadow: inset;
 }
 
 .toastBody {
-    font-family: "gruppo";
+  font-family: "gruppo";
 }
