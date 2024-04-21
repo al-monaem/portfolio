@@ -1,26 +1,21 @@
-import {
-  BsFillTelephoneFill,
-  BsFacebook,
-  BsLinkedin,
-  BsTwitter,
-} from 'react-icons/bs';
-import { MdEmail } from 'react-icons/md';
-import { ImLocation } from 'react-icons/im';
+import { BsFillTelephoneFill, BsFacebook, BsLinkedin } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+import { ImLocation } from "react-icons/im";
 
-import splash from '../../assets/splash.png';
-import { useRef, useState } from 'react';
-import ReactModal from 'react-modal';
-import Loader from '../Animation/Loader';
-import emailjs from '@emailjs/browser';
+import splash from "../../assets/splash.png";
+import { useRef, useState } from "react";
+import ReactModal from "react-modal";
+import Loader from "../Animation/Loader";
+import emailjs from "@emailjs/browser";
 
-import './Loader.css';
-import { toast } from 'react-toastify';
+import "./Loader.css";
+import { toast } from "react-toastify";
 
 const style = {
-  inputBlock: 'flex flex-col',
+  inputBlock: "flex flex-col",
   input:
-    'px-3 py-2 border border-[#6db2c7fd] rounded-md focus:outline-[#6db2c7fd]',
-  link: 'block rounded-full shadow-sm hover:shadow-md transition duration-150 p-2 hover:bg-[#7fc6dbfd]',
+    "px-3 py-2 border border-[#6db2c7fd] rounded-md focus:outline-[#6db2c7fd]",
+  link: "block rounded-full shadow-sm hover:shadow-md transition duration-150 p-2 hover:bg-[#7fc6dbfd]",
 };
 
 const Contact = ({ refs }) => {
@@ -33,40 +28,40 @@ const Contact = ({ refs }) => {
 
     emailjs
       .sendForm(
-        'service_e881k66',
-        'template_m1sx30e',
+        "service_e881k66",
+        "template_m1sx30e",
         form.current,
-        '0_jnJPrBMQvt3fMaw'
+        "0_jnJPrBMQvt3fMaw"
       )
       .then(
         (result) => {
           //console.log(result.text);
           setLoading(false);
-          toast.success('Email sent successfully.', {
-            icon: '✔',
-            position: 'top-right',
+          toast.success("Email sent successfully.", {
+            icon: "✔",
+            position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: 'colored',
+            theme: "colored",
           });
         },
         (error) => {
           //console.log(error.text);
           setLoading(false);
-          toast.error('Could not send, please try again later!', {
-            icon: '❌',
-            position: 'top-right',
+          toast.error("Could not send, please try again later!", {
+            icon: "❌",
+            position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: 'colored',
+            theme: "colored",
           });
         }
       );

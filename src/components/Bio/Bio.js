@@ -1,12 +1,11 @@
-import style from './style';
-import picture from '../../assets/me.png';
-import { BiDownArrowCircle } from 'react-icons/bi';
-import { BsGithub } from 'react-icons/bs';
-import { motion } from 'framer-motion';
-import bg from '../../assets/bg.mp4';
+import style from "./style";
+import picture from "../../assets/me.png";
+import { BiDownArrowCircle } from "react-icons/bi";
+import { BsGithub } from "react-icons/bs";
+import { motion } from "framer-motion";
+import bg from "../../assets/bg.mp4";
 
-import './style.css';
-import { FaFacebook, FaLinkedin } from 'react-icons/fa';
+import "./style.css";
 
 const Bio = ({ refs, onClick }) => {
   return (
@@ -71,7 +70,7 @@ const Bio = ({ refs, onClick }) => {
         </div>
       </section>
 
-      <video autoPlay loop muted playsInline className={'video'} src={bg} />
+      <video autoPlay loop muted playsInline className={"video"} src={bg} />
 
       <div className="waves">
         <svg

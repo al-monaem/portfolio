@@ -1,7 +1,7 @@
-import style from './style';
-import { AiOutlineMenuFold } from 'react-icons/ai';
-import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import style from "./style";
+import { AiOutlineMenuFold } from "react-icons/ai";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header = ({ onClick, navbarColor }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -38,14 +38,14 @@ const Header = ({ onClick, navbarColor }) => {
         >
           <motion.div
             className={`${
-              openMenu ? 'bg-white text-black' : 'bg-[#6db2c7fd]'
+              openMenu ? "bg-white text-black" : "bg-[#6db2c7fd]"
             } border`}
             onClick={(e) => onTap(e)}
-            initial={{ rotateY: 0, borderRadius: '50px 50px 50px 50px' }}
+            initial={{ rotateY: 0, borderRadius: "50px 50px 50px 50px" }}
             animate={
               openMenu
-                ? { rotateY: 180, borderRadius: '50px 50px 0px 0px' }
-                : { rotateY: 0, borderRadius: '50px 50px 50px 50px' }
+                ? { rotateY: 180, borderRadius: "50px 50px 0px 0px" }
+                : { rotateY: 0, borderRadius: "50px 50px 50px 50px" }
             }
             transition={{ duration: 0.5 }}
           >
