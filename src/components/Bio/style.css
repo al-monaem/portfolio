@@ -1,24 +1,35 @@
 .gruppo {
-    font-family: 'Gruppo', serif;
+  font-family: 'Gruppo', serif;
 }
 
 .waves {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
 
 .waves svg {
-    position: relative;
-    display: block;
-    width: calc(166% + 1.3px);
-    height: 214px;
+  position: relative;
+  display: block;
+  width: calc(166% + 1.3px);
+  height: 214px;
 }
 
 .waves .shape-fill {
-    fill: #ffffff;
+  fill: #ffffff;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  clip-path: url(#clip-path); /* or mask: url(#mask); */
 }

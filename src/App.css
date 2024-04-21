@@ -18,6 +18,16 @@
   box-shadow: inset;
 }
 
+.ant-tag {
+  font-family: 'gruppo';
+  font-weight: 600;
+  font-size: medium;
+}
+
 .toastBody {
-  font-family: "gruppo";
+  font-family: 'gruppo';
+}
+
+.navbar {
+  transition: background-color 0.2s ease; /* Adjust the duration as needed */
 }

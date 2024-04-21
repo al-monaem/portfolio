@@ -1,3 +1,5 @@
+import { Button, Tag } from 'antd';
+
 const Project = ({
   title,
   description,
@@ -9,6 +11,8 @@ const Project = ({
   isMobile,
   hasDarkMode = false,
   switchTheme,
+  moreDescription,
+  hasLiveURL,
 }) => {
   const result = images?.reduce((acc, image, index) => {
     if (index % 3 === 0) {
@@ -34,16 +38,20 @@ const Project = ({
   }, []);
 
   const colors = [
-    "bg-[#4fbbd6]",
-    "bg-[#3ac785]",
-    "bg-[#d9871c]",
-    "bg-[#ab5bd4]",
-    "bg-[#c43b62]",
+    'blue',
+    'red',
+    'cyan',
+    'orange',
+    'lime',
+    'purple',
+    'pink',
+    'green',
+    'yellow',
   ];
 
   return (
-    <div className="w-full">
-      {(align === "left" || isMobile) && (
+    <div className="w-full mb-10">
+      {(align === 'left' || isMobile) && (
         <>
           <div className="flex flex-col md:flex-row">
             <div className="h-auto md:w-[50%] w-full px-10 pt-10">
@@ -57,26 +65,45 @@ const Project = ({
                   alt=""
                 />
                 <p className="text-lg">{description}</p>
+                {moreDescription && (
+                  <>
+                    <br />
+                    <p className="text-lg">{moreDescription}</p>
+                  </>
+                )}
               </div>
-              <div className="w-full flex-wrap overflow-auto text-sm flex font-semibold pb-10 pt-10">
+              <div className="w-full flex-wrap overflow-auto text-sm flex font-semibold pt-10">
                 {skills &&
                   skills.map((skill, index) => {
                     return (
-                      <div
+                      <Tag
                         key={index}
-                        className={`px-3 w-auto py-2 mr-2 mb-2 text-white rounded-md ${
-                          colors[(Math.random() * colors.length) | 0]
-                        }`}
+                        color={colors[(Math.random() * colors.length) | 0]}
+                        className="mb-2"
                       >
-                        {skill}
-                      </div>
+                        <div className={`p-1 text-md`}>{skill}</div>
+                      </Tag>
                     );
                   })}
               </div>
+              {hasLiveURL && (
+                <div className="flex items-center mt-5 justify-center">
+                  <Button>
+                    <a
+                      className="gruppo font-bold"
+                      href="https://hwms.othership.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Visit Now
+                    </a>
+                  </Button>
+                </div>
+              )}
             </div>
             <div className="md:w-[50%] w-full px-10 pt-10">
               <h1 className="text-center text-2xl">
-                Gallery{hasDarkMode ? " - Switch to dark" : ""}
+                Gallery{hasDarkMode ? ' - Switch to dark' : ''}
               </h1>
               <div className="p-8">{result}</div>
               {hasDarkMode && (
@@ -93,12 +120,12 @@ const Project = ({
           </div>
         </>
       )}
-      {align === "right" && !isMobile && (
+      {align === 'right' && !isMobile && (
         <>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-[50%] w-full px-10 pt-10">
               <h1 className="text-center text-2xl">
-                Gallery{hasDarkMode ? " - Switch to dark" : ""}
+                Gallery{hasDarkMode ? ' - Switch to dark' : ''}
               </h1>
               <div className="p-8">{result}</div>
               {hasDarkMode && (
@@ -123,22 +150,41 @@ const Project = ({
                   alt=""
                 />
                 <p className="text-lg">{description}</p>
+                {moreDescription && (
+                  <>
+                    <br />
+                    <p className="text-lg">{moreDescription}</p>
+                  </>
+                )}
               </div>
               <div className="w-full flex flex-wrap text-sm font-semibold mt-2 pb-10">
                 {skills &&
                   skills.map((skill, index) => {
                     return (
-                      <div
+                      <Tag
                         key={index}
-                        className={`px-3 mr-2 py-2 mb-2 text-white rounded-md inline-block ${
-                          colors[(Math.random() * colors.length) | 0]
-                        }`}
+                        color={colors[(Math.random() * colors.length) | 0]}
+                        className="mb-2"
                       >
-                        {skill}
-                      </div>
+                        <div className={`p-1 text-md`}>{skill}</div>
+                      </Tag>
                     );
                   })}
               </div>
+              {hasLiveURL && (
+                <div className="flex mt-5 items-center justify-center">
+                  <Button>
+                    <a
+                      className="gruppo font-bold block w-full h-full"
+                      href="https://hwms.othership.com/"
+                      target="_blank"
+                      rel={'noreferrer'}
+                    >
+                      Visit Now
+                    </a>
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </>
