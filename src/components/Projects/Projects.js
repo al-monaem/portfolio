@@ -42,6 +42,18 @@ import othership_events from "../../assets/othership/events.png";
 import othership_settings from "../../assets/othership/settings.png";
 import othership_analytics from "../../assets/othership/analytics.png";
 
+import idtp from "../../assets/idtp/idtp.jpeg";
+import idtp_dashboard_dark from "../../assets/idtp/dashboard_dark.jpg";
+import idtp_dashboard_white from "../../assets/idtp/dashboard_white.jpg";
+import idtp_login_dark from "../../assets/idtp/login_dark.png";
+import idtp_login_white from "../../assets/idtp/login_white.png";
+import idtp_transactions_dark from "../../assets/idtp/transactions_dark.png";
+import idtp_transactions_white from "../../assets/idtp/transactions_white.png";
+import idtp_trx_details_dark from "../../assets/idtp/trx_details_dark.png";
+import idtp_trx_details_white from "../../assets/idtp/trx_details_white.png";
+import idtp_roles_dark from "../../assets/idtp/roles_dark.jpg";
+import idtp_roles_white from "../../assets/idtp/roles_white.jpg";
+
 import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import { Divider } from "antd";
@@ -113,17 +125,39 @@ const othershipImages = [
 ];
 const othershipSkills = ["NodeJS", "NestJS", "Queue", "Scheduler", "Webhooks"];
 
+const idtpDescription = `IDTP Admin Panel is a software made for tracking and monitoring all binimoy transactions of a bank. The solution is provides a detailed insight on various transactional aspects of the bank.`;
+const idtpImagesDark = [
+  idtp_login_dark,
+  idtp_roles_dark,
+  idtp_transactions_dark,
+  idtp_trx_details_dark,
+  idtp_dashboard_dark,
+];
+const idtpImagesWhite = [
+  idtp_login_white,
+  idtp_roles_white,
+  idtp_transactions_white,
+  idtp_trx_details_white,
+  idtp_dashboard_white,
+];
+const idtpSkills = ["Asp .Net Core", "ReactJS", "ChartJS", "Tailwind"];
+
 const Projects = ({ refs }) => {
   const [openModal, setOpenModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
   const [isMobile, setIsMobile] = useState(false);
   const [lightTheme, setLightTheme] = useState(true);
+  const [whiteThemeIdtp, setWhiteThemeIdtp] = useState(true);
 
   const [mfrImages, setMFRImgaes] = useState(mfrImagesLight);
+  const [idtpImages, setIdtpImages] = useState(idtpImagesWhite);
 
   const switchTheme = () => {
     setLightTheme(!lightTheme);
+  };
+  const switchThemeIdtp = () => {
+    setWhiteThemeIdtp(!whiteThemeIdtp);
   };
 
   //choose the screen size
@@ -142,6 +176,14 @@ const Projects = ({ refs }) => {
       setMFRImgaes(mfrImagesDark);
     }
   }, [lightTheme]);
+
+  useEffect(() => {
+    if (whiteThemeIdtp) {
+      setIdtpImages(idtpImagesWhite);
+    } else {
+      setIdtpImages(idtpImagesDark);
+    }
+  }, [whiteThemeIdtp]);
 
   // create an event listener
   useEffect(() => {
@@ -187,11 +229,30 @@ const Projects = ({ refs }) => {
       </Divider>
       <Project
         onClick={onClick}
+        title={
+          <div>
+            Binimoy Admin Panel
+            <span className="text-gray-500 text-base ml-2">(Full Stack)</span>
+          </div>
+        }
+        skills={idtpSkills}
+        image={idtp}
+        images={idtpImages}
+        align={"right"}
+        description={idtpDescription}
+        hasDarkMode={true}
+        switchTheme={switchThemeIdtp}
+      />
+      <Divider>
+        <FaConnectdevelop className="h-5 w-5 text-gray-400" />
+      </Divider>
+      <Project
+        onClick={onClick}
         title={"MFR"}
         skills={mfrSkills}
         image={mfr}
         images={mfrImages}
-        align={"right"}
+        align={"left"}
         description={mfrDescription}
         hasDarkMode={true}
         switchTheme={switchTheme}
@@ -205,7 +266,7 @@ const Projects = ({ refs }) => {
         skills={examSkills}
         image={exam}
         images={examImages}
-        align={"left"}
+        align={"right"}
         description={examDescription}
       />
       <Divider>
@@ -218,7 +279,7 @@ const Projects = ({ refs }) => {
         skills={metroSkills}
         image={metro}
         images={metroImages}
-        align={"right"}
+        align={"left"}
         description={metroDescription}
       />
       {/* <Divider>
@@ -230,7 +291,7 @@ const Projects = ({ refs }) => {
         skills={artconSkills}
         image={artcon}
         images={artconImages}
-        align={'right'}
+        align={'left'}
         description={artconDescription}
       /> */}
       <Divider>
@@ -243,7 +304,7 @@ const Projects = ({ refs }) => {
         skills={hmsSkills}
         image={hms}
         images={hmsImages}
-        align={"left"}
+        align={"right"}
         description={hmsDescription}
       />
 
